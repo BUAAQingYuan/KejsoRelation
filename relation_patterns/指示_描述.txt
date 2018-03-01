@@ -1,0 +1,8 @@
+(.*?)<Entity>(.+?)</Entity>(.*?)作为(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)即<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是一种(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是一类(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是一个(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>属(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)又称(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)常见的(.*?)<Entity>(.+?)</Entity>(.*)

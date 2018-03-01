@@ -1,0 +1,5 @@
+(.*?)<Entity>(.+?)家</Entity><Entity>(.+?)</Entity>(.*)
+(.*?)<Entity><Position>(.+?)</Entity><Entity>(.+?)</Entity>(.*)
+(.*?)<Entity><Position>(.+?)</Entity>兼(.+?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是(.*?)<Entity>(.+?)家</Entity>(.*)
+(.*?)<Entity><NR>(.+?)</Entity>(.*?)是(.*?)<Entity><Position>(.+?)</Entity>(.*)

@@ -1,0 +1,8 @@
+(.*?)<Entity>(.+?)</Entity>起源于(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>产的(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是从<Entity>(.+?)</Entity>(.*)的一种(.*)
+(.*?)产<Entity>(.+?)</Entity>的<Entity>(.+?)</Entity>(.*)
+(.*?)由<Entity>(.+?)</Entity>产生<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>发明(.*?)<Entity>(.+?)</Entity>(.*)
+(.*?)<Entity>(.+?)</Entity>(.*?)是从(.*?)<Entity>(.+?)</Entity>(.*)收集(.*)
+(.*?)<Entity><NR>(.+?)</Entity>(.*?)是(.*?)<Entity>(.+?)</Entity>人(.*?)

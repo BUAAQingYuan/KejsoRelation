@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SqlMapper.TemplateMapper">
+	
+	<resultMap type="Relation" id="RelationMap">
+		<id property="id" column="id" />
+		<result property="sentence" column="sentence" />
+		<result property="relation" column="relation" />
+		<result property="e1" column="e1" />
+		<result property="e2" column="e2" />
+	</resultMap>
+	
+	<resultMap type="EntityRelation" id="EntityRelationMap">
+		<id property="id" column="id" />
+		<result property="entity" column="entity" />
+		<result property="Cause_entitys" column="Cause_entitys" />
+		<result property="Describe_entitys" column="Describe_entitys" />
+		<result property="From_entitys" column="From_entitys" />
+		<result property="Identity_entitys" column="Identity_entitys" />
+		<result property="Medicine_entitys" column="Medicine_entitys" />
+		<result property="Part_entitys" column="Part_entitys" />
+		<result property="Position_entitys" column="Position_entitys" />
+		<result property="edges" column="edges" />
+		<result property="medicine_count" column="medicine_count" />
+	</resultMap>
+	
+	<resultMap type="MedicineInfo" id="MedicineInfoMap">
+		<id property="id" column="id" />
+		<result property="entity" column="entity" />
+		<result property="relations" column="relations" />
+		<result property="count" column="count" />
+	</resultMap>
+    
+    <select id="getData" parameterType="String" resultType="Hashmap">
+    	select abstract_cn from solr_paper_2000 limit ${offset}, 10000
+    </select>
+    
+    <select id="getKeyword" parameterType="String" resultType="Hashmap">
+    	select keyword_cn from journal_all limit ${offset}, 10000
+    </select>
+  
+  	<insert id="insertRelation" parameterType="Relation" useGeneratedKeys="true" keyProperty="id">
+    	insert into relations (sentence,relation,e1,e2)
+    	 		values(#{sentence},#{relation},#{e1},#{e2})
+    </insert>
+    
+     <select id="getRecordByEntity" parameterType="String" resultMap="RelationMap">
+    	select * from relations where e1=#{entity} or e2=#{entity}
+    </select>
+  	
+  	<insert id="insertEntityRelation" parameterType="EntityRelation" useGeneratedKeys="true" keyProperty="id">
+    	insert into entity_map (entity,Cause_entitys,Describe_entitys,From_entitys,Identity_entitys,Medicine_entitys,Part_entitys,Position_entitys,edges,medicine_count)
+    	 		values(#{entity},#{Cause_entitys},#{Describe_entitys},#{From_entitys},#{Identity_entitys},#{Medicine_entitys},#{Part_entitys},#{Position_entitys},#{edges},#{medicine_count})
+    </insert>
+    
+    <select id="getAllMedicineEntity" parameterType="String" resultMap="EntityRelationMap">
+    	select * from entity_map where medicine_count > 0
+    </select>
+    
+     <select id="getMedicineByEntity" parameterType="String" resultMap="EntityRelationMap">
+    	select * from entity_map where entity=#{entity}
+    </select>
+    
+    <insert id="insertMedicineInfo" parameterType="MedicineInfo" useGeneratedKeys="true" keyProperty="id">
+    	insert into medicineinfo2 (entity,relations,count)
+    	 		values(#{entity},#{relations},#{count})
+    </insert>
+  	
+</mapper>
